@@ -1,7 +1,7 @@
 class Stack:
     """Provides stack container"""
-    def __init__(self, _stack_type = None):
-        self._items = []
+    def __init__(self, _stack_type = None, _items = None):
+        self._items = _items if _items is not None else []
         self._stack_type = _stack_type
 
     def push(self, data) -> None:
@@ -26,4 +26,4 @@ class Stack:
         return str(self._items)
 
     def __repr__(self):
-        return f"Stack({self._items}, {self._stack_type})"
+        return f"Stack(_stack_type = {repr(self._stack_type)!r}, _items = {self._items})"
